@@ -15,6 +15,7 @@ namespace DattingApp.API.Model
         }
         public async Task<User> Loging(string username, string password)
         {
+           // throw new Exception("computer says no") ;
            // throw new System.NotImplementedException();
            var user= await _context.users.FirstOrDefaultAsync(
                x =>x.Username==username

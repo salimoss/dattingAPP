@@ -17,7 +17,7 @@ namespace DattingApp.API.Model
         {
            // throw new Exception("computer says no") ;
            // throw new System.NotImplementedException();
-           var user= await _context.users.FirstOrDefaultAsync(
+           var user= await _context.Users.FirstOrDefaultAsync(
                x =>x.Username==username
            );
             if(user == null)
@@ -49,7 +49,7 @@ namespace DattingApp.API.Model
             CreatePasswordHash(password,out passwordHash,out passwordSalt);
             user.PasswordHash=passwordHash;
             user.passwordSalt=passwordSalt;
-            await _context.users.AddAsync(user);
+            await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
             return user;
         }
@@ -66,7 +66,7 @@ namespace DattingApp.API.Model
         public async Task<bool> UserExists(string username)
         {
             //throw new System.NotImplementedException();
-        if (await _context.users.AnyAsync(
+        if (await _context.Users.AnyAsync(
             x => x.Username == username
         ))
         return true;

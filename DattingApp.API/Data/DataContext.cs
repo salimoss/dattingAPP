@@ -8,6 +8,7 @@ namespace DattingApp.API.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {}
         public DbSet<Value> values {get; set;}
-        public DbSet<User> users {get;set;}
+        public DbSet<User> Users {get;set;}
+        public DbSet<Photo> Photos { get; set; }
     }
 }
